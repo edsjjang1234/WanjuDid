@@ -1,0 +1,426 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:DIDEx.Converts"
+             xmlns:prism="http://prismlibrary.com/"             
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DIDEx.Views.SubMenu"             
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="1080" d:DesignHeight="1535">
+    <UserControl.Resources>
+        <local:ButtonStateConverter x:Key="Converter"/>
+
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="White"></Setter>
+           
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter  VerticalAlignment="Center" Margin="15,0,0,0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/main_bg.jpg"/>
+        </Grid.Background>
+
+        <!--<Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[0].Key}" Content ="{Binding MenuList[0].MenuName}"  Visibility="{Binding MenuList[0].ButtonShow, Converter={StaticResource Converter}}"   Margin="-720,-550,0,0" Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White"  BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[1].Key}" Content ="{Binding MenuList[1].MenuName}"  Visibility="{Binding MenuList[1].ButtonShow, Converter={StaticResource Converter}}"   Margin="-240,-550,0,0" Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[2].Key}" Content ="{Binding MenuList[2].MenuName}"  Visibility="{Binding MenuList[2].ButtonShow, Converter={StaticResource Converter}}"   Margin="240,-550,0,0" Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[3].Key}" Content ="{Binding MenuList[3].MenuName}"  Visibility="{Binding MenuList[3].ButtonShow, Converter={StaticResource Converter}}"   Margin="720,-550,0,0" Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[4].Key}" Content ="{Binding MenuList[4].MenuName}"  Visibility="{Binding MenuList[4].ButtonShow, Converter={StaticResource Converter}}"   Margin="-720,-210,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[5].Key}" Content ="{Binding MenuList[5].MenuName}"  Visibility="{Binding MenuList[5].ButtonShow, Converter={StaticResource Converter}}"   Margin="-240,-210,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[6].Key}" Content ="{Binding MenuList[6].MenuName}" Visibility="{Binding MenuList[6].ButtonShow, Converter={StaticResource Converter}}"    Margin="240,-210,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[7].Key}" Content ="{Binding MenuList[7].MenuName}" Visibility="{Binding MenuList[7].ButtonShow, Converter={StaticResource Converter}}"    Margin="720,-210,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[8].Key}" Content ="{Binding MenuList[8].MenuName}" Visibility="{Binding MenuList[8].ButtonShow, Converter={StaticResource Converter}}"    Margin="-720,130,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[9].Key}" Content ="{Binding MenuList[9].MenuName}" Visibility="{Binding MenuList[9].ButtonShow, Converter={StaticResource Converter}}"    Margin="-240,130,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[10].Key}" Content ="{Binding MenuList[10].MenuName}" Visibility="{Binding MenuList[10].ButtonShow, Converter={StaticResource Converter}}" Margin="240,130,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[11].Key}" Content ="{Binding MenuList[11].MenuName}" Visibility="{Binding MenuList[11].ButtonShow, Converter={StaticResource Converter}}" Margin="720,130,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[12].Key}" Content ="{Binding MenuList[12].MenuName}" Visibility="{Binding MenuList[12].ButtonShow, Converter={StaticResource Converter}}"    Margin="-720,470,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[13].Key}" Content ="{Binding MenuList[13].MenuName}" Visibility="{Binding MenuList[13].ButtonShow, Converter={StaticResource Converter}}"    Margin="-240,470,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[14].Key}" Content ="{Binding MenuList[14].MenuName}" Visibility="{Binding MenuList[14].ButtonShow, Converter={StaticResource Converter}}" Margin="240,470,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[15].Key}" Content ="{Binding MenuList[15].MenuName}" Visibility="{Binding MenuList[15].ButtonShow, Converter={StaticResource Converter}}" Margin="720,470,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[16].Key}" Content ="{Binding MenuList[16].MenuName}" Visibility="{Binding MenuList[16].ButtonShow, Converter={StaticResource Converter}}"    Margin="-720,820,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[17].Key}" Content ="{Binding MenuList[17].MenuName}" Visibility="{Binding MenuList[17].ButtonShow, Converter={StaticResource Converter}}"    Margin="-240,820,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[18].Key}" Content ="{Binding MenuList[18].MenuName}" Visibility="{Binding MenuList[18].ButtonShow, Converter={StaticResource Converter}}" Margin="240,820,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[19].Key}" Content ="{Binding MenuList[19].MenuName}" Visibility="{Binding MenuList[19].ButtonShow, Converter={StaticResource Converter}}" Margin="720,820,0,0"  Width="220" Height="150"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="22" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="{Binding ButtonBack}"/>
+            </Button.Background>
+        </Button>-->
+
+
+        <!--HorizontalContentAlignment="Left" Padding="15,0,0,0"   -->
+        <!--<Button  Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[0].Key}" Content ="{Binding MenuList[0].MenuName,FallbackValue=지역사회서비스 투자사업 서비스 신청}"  Visibility="{Binding MenuList[0].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,-1250,0,0" Width="525" Height="110"
+                 FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White"   BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>            
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[1].Key}" Content ="{Binding MenuList[1].MenuName}"  Visibility="{Binding MenuList[1].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,-1250,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button  Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[2].Key}" Content ="{Binding MenuList[2].MenuName}"  Visibility="{Binding MenuList[2].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,-1000,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[3].Key}" Content ="{Binding MenuList[3].MenuName}"  Visibility="{Binding MenuList[3].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-1000,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[4].Key}" Content ="{Binding MenuList[4].MenuName}"  Visibility="{Binding MenuList[4].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,-750,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[5].Key}" Content ="{Binding MenuList[5].MenuName}"  Visibility="{Binding MenuList[5].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-750,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[6].Key}" Content ="{Binding MenuList[6].MenuName}" Visibility="{Binding MenuList[6].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,-500,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[7].Key}" Content ="{Binding MenuList[7].MenuName}" Visibility="{Binding MenuList[7].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-500,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[8].Key}" Content ="{Binding MenuList[8].MenuName}" Visibility="{Binding MenuList[8].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="-540,-250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[9].Key}" Content ="{Binding MenuList[9].MenuName}" Visibility="{Binding MenuList[9].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[10].Key}" Content ="{Binding MenuList[10].MenuName}" Visibility="{Binding MenuList[10].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,0,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[11].Key}" Content ="{Binding MenuList[11].MenuName}" Visibility="{Binding MenuList[11].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,0,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[12].Key}" Content ="{Binding MenuList[12].MenuName}" Visibility="{Binding MenuList[12].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[13].Key}" Content ="{Binding MenuList[13].MenuName}" Visibility="{Binding MenuList[13].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="540,250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[14].Key}" Content ="{Binding MenuList[14].MenuName}" Visibility="{Binding MenuList[14].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,500,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[15].Key}" Content ="{Binding MenuList[15].MenuName}" Visibility="{Binding MenuList[15].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,500,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[16].Key}" Content ="{Binding MenuList[16].MenuName}" Visibility="{Binding MenuList[16].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,750,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[17].Key}" Content ="{Binding MenuList[17].MenuName}" Visibility="{Binding MenuList[17].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="540,750,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[18].Key}" Content ="{Binding MenuList[18].MenuName}" Visibility="{Binding MenuList[18].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,1000,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+        <Button.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+        </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[19].Key}" Content ="{Binding MenuList[19].MenuName}" Visibility="{Binding MenuList[19].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,1000,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>-->
+
+
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[0].Key}" Content ="{Binding MenuList[0].MenuName,FallbackValue=지역사회서비스 투자사업 서비스 신청}"  Visibility="{Binding MenuList[0].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,-800,0,0" Width="525" Height="110"
+                 FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White"   BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png" />
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[1].Key}" Content ="{Binding MenuList[1].MenuName}"  Visibility="{Binding MenuList[1].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,-800,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[2].Key}" Content ="{Binding MenuList[2].MenuName}"  Visibility="{Binding MenuList[2].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,-550,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[3].Key}" Content ="{Binding MenuList[3].MenuName}"  Visibility="{Binding MenuList[3].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-550,0,0" Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[4].Key}" Content ="{Binding MenuList[4].MenuName}"  Visibility="{Binding MenuList[4].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,-300,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[5].Key}" Content ="{Binding MenuList[5].MenuName}"  Visibility="{Binding MenuList[5].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-300,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[6].Key}" Content ="{Binding MenuList[6].MenuName}" Visibility="{Binding MenuList[6].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,-50,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[7].Key}" Content ="{Binding MenuList[7].MenuName}" Visibility="{Binding MenuList[7].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,-50,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[8].Key}" Content ="{Binding MenuList[8].MenuName}" Visibility="{Binding MenuList[8].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="-540,200,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[9].Key}" Content ="{Binding MenuList[9].MenuName}" Visibility="{Binding MenuList[9].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="540,200,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[10].Key}" Content ="{Binding MenuList[10].MenuName}" Visibility="{Binding MenuList[10].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,450,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[11].Key}" Content ="{Binding MenuList[11].MenuName}" Visibility="{Binding MenuList[11].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,450,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[12].Key}" Content ="{Binding MenuList[12].MenuName}" Visibility="{Binding MenuList[12].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,700,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[13].Key}" Content ="{Binding MenuList[13].MenuName}" Visibility="{Binding MenuList[13].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="540,700,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[14].Key}" Content ="{Binding MenuList[14].MenuName}" Visibility="{Binding MenuList[14].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,950,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[15].Key}" Content ="{Binding MenuList[15].MenuName}" Visibility="{Binding MenuList[15].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,950,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[16].Key}" Content ="{Binding MenuList[16].MenuName}" Visibility="{Binding MenuList[16].ButtonShow, Converter={StaticResource Converter}}"  HorizontalContentAlignment="Left" Padding="15,0,0,0"  Margin="-540,1200,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonStyle}" Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[17].Key}" Content ="{Binding MenuList[17].MenuName}" Visibility="{Binding MenuList[17].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0"   Margin="540,1200,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <!--<Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[18].Key}" Content ="{Binding MenuList[18].MenuName}" Visibility="{Binding MenuList[18].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="-540,1250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding InformationMapCommand}" CommandParameter="{Binding MenuList[19].Key}" Content ="{Binding MenuList[19].MenuName}" Visibility="{Binding MenuList[19].ButtonShow, Converter={StaticResource Converter}}" HorizontalContentAlignment="Left" Padding="15,0,0,0" Margin="540,1250,0,0"  Width="525" Height="110"
+                FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="30" Foreground="White" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/subBtn.png"/>
+            </Button.Background>
+        </Button>-->
+        <ContentControl  prism:RegionManager.RegionName="SubMenuRegion" />
+        <Button Style="{StaticResource ButtonStyle}" Content="" BorderThickness="0" Command="{Binding ReturnMenu}"  HorizontalAlignment="Left" Margin="30,1450,0,0" VerticalAlignment="Top" Width="100" Height="100">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/returnBtn.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+
+</UserControl>

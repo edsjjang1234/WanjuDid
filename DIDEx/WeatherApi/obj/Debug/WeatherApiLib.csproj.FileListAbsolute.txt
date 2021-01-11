@@ -1,0 +1,5 @@
+C:\Users\edsjj\source\repos\DIDEx\WeatherApi\bin\Debug\WeatherApi.dll
+C:\Users\edsjj\source\repos\DIDEx\WeatherApi\bin\Debug\WeatherApi.pdb
+C:\Users\edsjj\source\repos\DIDEx\WeatherApi\obj\Debug\WeatherApiLib.csproj.CoreCompileInputs.cache
+C:\Users\edsjj\source\repos\DIDEx\WeatherApi\obj\Debug\WeatherApi.dll
+C:\Users\edsjj\source\repos\DIDEx\WeatherApi\obj\Debug\WeatherApi.pdb

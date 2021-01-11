@@ -1,0 +1,110 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"       
+    xmlns:i = "http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DIDEx.Views.MainMenu"             
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="1080" d:DesignHeight="1535">
+    <UserControl.Resources>
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/DIDEx;component/Resources/main_bg.jpg"/>
+        </Grid.Background>
+        <!--Command="{Binding MenuCommand}"-->
+        <Button Style="{StaticResource SomeButtonStyle}"  Margin="170,150,0,0"  Command="{Binding MenuCommand}"  CommandParameter="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_1.png"/>
+            </Button.Background>
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDown" >
+                    <i:InvokeCommandAction Command="{Binding MenuCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="420,150,0,0" Command="{Binding MenuCommand}" CommandParameter="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_2.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Style="{StaticResource SomeButtonStyle}" Margin="670,150,0,0" Command="{Binding MenuCommand}" CommandParameter="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_3.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="170,400,0,0" Command="{Binding MenuCommand}" CommandParameter="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_4.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="420,400,0,0" Command="{Binding MenuCommand}" CommandParameter="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_5.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="670,400,0,0" Command="{Binding MenuCommand}" CommandParameter="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_6.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}"  Margin="170,650,0,0" Command="{Binding MenuCommand}" CommandParameter="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_7.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="420,650,0,0" Command="{Binding MenuCommand}" CommandParameter="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_8.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="670,650,0,0" Command="{Binding MenuCommand}" CommandParameter="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_9.png"/>
+            </Button.Background>
+        </Button>
+        <Button  Style="{StaticResource SomeButtonStyle}" Margin="170,900,0,0" Command="{Binding MenuCommand}" CommandParameter="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_10.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="420,900,0,0" Command="{Binding MenuCommand}" CommandParameter="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_11.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="670,900,0,0" Command="{Binding MenuCommand}" CommandParameter="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_12.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="170,1150,0,0" Command="{Binding MenuCommand}" CommandParameter="11" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_13.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}"  Margin="420,1150,0,0" Command="{Binding MenuCommand}" CommandParameter="12" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_14.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" Margin="670,1150,0,0" Command="{Binding MenuCommand}" CommandParameter="13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Height="231" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium" FontSize="24" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="/DIDEx;component/Resources/menubtn_15.png"/>
+            </Button.Background>
+
+        </Button>
+         
+    </Grid>
+</UserControl>

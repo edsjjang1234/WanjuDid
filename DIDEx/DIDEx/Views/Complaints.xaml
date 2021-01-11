@@ -1,0 +1,294 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"         
+     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:DIDEx"
+     xmlns:Controllocal="clr-namespace:DIDEx.Converts"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DIDEx.Views.Complaints"             
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignWidth="1082" d:DesignHeight="1519">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/DIDEx;component/Resources/complaints_map.jpg"/>
+    </UserControl.Background>
+    <UserControl.Resources>
+        <Controllocal:ButtonStateConverter x:Key="Converter"/>
+
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="White"></Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter  VerticalAlignment="Center" Margin="15,0,0,0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>          
+
+            <Grid Width="150" Height="80" Margin="520,-1470,0,0" Visibility="{Binding VisibilityList[0].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[0]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="570,-1170,0,0" Visibility="{Binding VisibilityList[1].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[1]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="330,-1280,0,0" Visibility="{Binding VisibilityList[2].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[2]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="80,-1280,0,0" Visibility="{Binding VisibilityList[3].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[3]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="330,-1080,0,0" Visibility="{Binding VisibilityList[4].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[4]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="80,-1080,0,0" Visibility="{Binding VisibilityList[5].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[5]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="640,-720,0,0" Visibility="{Binding VisibilityList[6].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[6]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="380,-830,0,0" Visibility="{Binding VisibilityList[7].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[7]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="120,-830,0,0"  Visibility="{Binding VisibilityList[8].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[8]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-140,-830,0,0" Visibility="{Binding VisibilityList[9].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[9]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="380,-600,0,0" Visibility="{Binding VisibilityList[10].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[10]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="120,-600,0,0" Visibility="{Binding VisibilityList[11].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[11]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-140,-600,0,0" Visibility="{Binding VisibilityList[12].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[12]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="700,-290,0,0" Visibility="{Binding VisibilityList[13].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[13]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="430,-400,0,0" Visibility="{Binding VisibilityList[14].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[14]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="150,-400,0,0" Visibility="{Binding VisibilityList[15].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[15]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-130,-400,0,0" Visibility="{Binding VisibilityList[16].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[16]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="430,-150,0,0"  Visibility="{Binding VisibilityList[17].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[17]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="150,-150,0,0" Visibility="{Binding VisibilityList[18].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[18]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-130,-150,0,0" Visibility="{Binding VisibilityList[19].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[19]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="780,290,0,0" Visibility="{Binding VisibilityList[20].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[20]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="490,180,0,0" Visibility="{Binding VisibilityList[21].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[21]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="200,180,0,0" Visibility="{Binding VisibilityList[22].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[22]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-110,180,0,0" Visibility="{Binding VisibilityList[23].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[23]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="490,450,0,0" Visibility="{Binding VisibilityList[24].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[24]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="200,450,0,0" Visibility="{Binding VisibilityList[25].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[25]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-110,450,0,0" Visibility="{Binding VisibilityList[26].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[26]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="880,930,0,0" Visibility="{Binding VisibilityList[27].ShowVisibility, Converter={StaticResource Converter}}" >
+                <local:NameCardControl  DataContext="{Binding UserList[27]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="550,770,0,0" Visibility="{Binding VisibilityList[28].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[28]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="230,770,0,0" Visibility="{Binding VisibilityList[29].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[29]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="550,1100,0,0" Visibility="{Binding VisibilityList[30].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[30]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="230,1100,0,0" Visibility="{Binding VisibilityList[31].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[31]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Grid Width="150" Height="80" Margin="-500,1250,0,0" Visibility="{Binding VisibilityList[32].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[32]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,1050,0,0" Visibility="{Binding VisibilityList[33].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[33]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,850,0,0" Visibility="{Binding VisibilityList[34].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[34]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,650,0,0" Visibility="{Binding VisibilityList[35].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[35]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,450,0,0" Visibility="{Binding VisibilityList[36].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[36]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,280,0,0" Visibility="{Binding VisibilityList[37].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[37]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,100,0,0" Visibility="{Binding VisibilityList[38].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[38]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-70,0,0" Visibility="{Binding VisibilityList[39].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[39]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-320,0,0" Visibility="{Binding VisibilityList[40].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[40]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-450,0,0" Visibility="{Binding VisibilityList[41].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[41]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-580,0,0" Visibility="{Binding VisibilityList[42].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[42]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-710,0,0" Visibility="{Binding VisibilityList[43].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[43]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-950,0,0" Visibility="{Binding VisibilityList[44].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[44]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-1093,0,0"  Visibility="{Binding VisibilityList[45].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[45]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-1220,0,0" Visibility="{Binding VisibilityList[46].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[46]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+            <Grid Width="150" Height="80" Margin="-500,-1350,0,0" Visibility="{Binding VisibilityList[47].ShowVisibility, Converter={StaticResource Converter}}">
+                <local:NameCardControl  DataContext="{Binding UserList[47]}" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Height="80" 
+                 Style="{DynamicResource TemplateButton_Base}" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+            </Grid>
+
+            <Button Style="{StaticResource ButtonStyle}"  BorderThickness="0" Command="{Binding RetrunViewCommand}" Width="100" Height="100" Margin="-930,1050,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/DIDEx;component/Resources/returnBtn.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+        <Grid Background="#99000000" Visibility="{Binding ShowPopup}">
+            <Grid.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding PopupCloseCommand}" />
+            </Grid.InputBindings>
+            <Grid DataContext="{Binding SelectedItem}" Background="White" Width="322" Height="437">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDown" >
+                        <i:InvokeCommandAction Command="{Binding DataContext.PopupCloseCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}} }" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="16*"/>
+                </Grid.RowDefinitions>
+
+                <Border >
+                    <Border.Background>
+                        <ImageBrush ImageSource="/DIDEx;component/Resources/profile_top.png"/>
+                    </Border.Background>
+                    <TextBlock Text="{Binding Dept, FallbackValue=부서}" 
+                               Margin="4,0,0,0" VerticalAlignment="Center"
+                               FontSize="30" Foreground="White" FontWeight="Bold"/>
+                </Border>
+
+                <Grid Grid.Row="1">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/DIDEx;component/Resources/profile_bottom.png"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Name, FallbackValue=성명}" 
+                               Width="302" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0,10,101" FontSize="30" FontWeight="Bold" Height="40" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+                    <TextBlock Text="{Binding Team, FallbackValue=팀}" Width="302" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,287,10,0" FontSize="20" FontWeight="Bold" Foreground="#FF686868" Height="27" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+                    <TextBlock Text="{Binding Work, FallbackValue=업무}" Width="302" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,319,10,0" FontSize="20" FontWeight="Bold" Foreground="#FF686868" Height="27" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+                    <TextBlock Text="{Binding Tel, FallbackValue=전화번호}" Width="302" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,351,10,0" FontSize="20" FontWeight="Bold" Foreground="#FF686868" Height="27" FontFamily="/DIDEx;component/Resources/#S-Core Dream 5 Medium"/>
+                    <Ellipse x:Name="ellipse"  Margin="61,10,63,178" Width="200" Height="200" VerticalAlignment="Center">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding ImagePath}" Stretch="UniformToFill" AlignmentY="Top"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
+    

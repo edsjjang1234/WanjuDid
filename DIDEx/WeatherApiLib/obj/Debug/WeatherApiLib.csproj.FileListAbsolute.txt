@@ -1,0 +1,14 @@
+C:\Users\edsjj\source\repos\DIDEx\WeatherApiLib\bin\Debug\WeatherApiLib.dll
+C:\Users\edsjj\source\repos\DIDEx\WeatherApiLib\bin\Debug\WeatherApiLib.pdb
+C:\Users\edsjj\source\repos\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.csproj.CoreCompileInputs.cache
+C:\Users\edsjj\source\repos\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.dll
+C:\Users\edsjj\source\repos\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.pdb
+D:\완주군청\소스\DIDEx\WeatherApiLib\bin\Debug\WeatherApiLib.dll
+D:\완주군청\소스\DIDEx\WeatherApiLib\bin\Debug\WeatherApiLib.pdb
+D:\완주군청\소스\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.csproj.CoreCompileInputs.cache
+D:\완주군청\소스\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.dll
+D:\완주군청\소스\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.pdb
+D:\완주군청\소스\DIDEx\WeatherApiLib\bin\Debug\LogLib.dll
+D:\완주군청\소스\DIDEx\WeatherApiLib\bin\Debug\LogLib.pdb
+D:\완주군청\소스\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.csprojAssemblyReference.cache
+D:\완주군청\소스\DIDEx\WeatherApiLib\obj\Debug\WeatherApiLib.csproj.CopyComplete

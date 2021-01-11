@@ -1,0 +1,6 @@
+D:\완주군청\소스\DIDEx\NativeLib\bin\Debug\NativeLib.dll
+D:\완주군청\소스\DIDEx\NativeLib\bin\Debug\NativeLib.pdb
+D:\완주군청\소스\DIDEx\NativeLib\obj\Debug\NativeLib.csproj.CoreCompileInputs.cache
+D:\완주군청\소스\DIDEx\NativeLib\obj\Debug\NativeLib.dll
+D:\완주군청\소스\DIDEx\NativeLib\obj\Debug\NativeLib.pdb
+D:\완주군청\소스\DIDEx\NativeLib\obj\Debug\NativeLib.csprojAssemblyReference.cache
